@@ -29,6 +29,8 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/base64uploadadapter';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -56,7 +58,9 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	Highlight
+	Highlight,
+	Base64UploadAdapter,
+	Alignment
 ];
 
 // Editor configuration.
@@ -65,11 +69,10 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
-			'bold',
-			'italic',
+			'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify',
+			'bold', 'italic',
 			'link',
-			'bulletedList',
-			'numberedList',
+			'bulletedList', 'numberedList',
 			'highlight',
 			'imageUpload',
 			'blockQuote',
