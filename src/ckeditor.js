@@ -31,6 +31,10 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/base64uploadadapter';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import BlockToolbar from '@ckeditor/ckeditor5-ui/src/toolbar/block/blocktoolbar';
+import HeadingButtonsUI from '@ckeditor/ckeditor5-heading/src/headingbuttonsui';
+import ParagraphButtonUI from '@ckeditor/ckeditor5-paragraph/src/paragraphbuttonui';
+
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -82,12 +86,26 @@ ClassicEditor.defaultConfig = {
 			'redo'
 		]
 	},
+	blockToolbar: [
+		'paragraph', 'heading1', 'heading2', 'heading3',
+		'|',
+		'bulletedList', 'numberedList',
+		'|',
+		'blockQuote', 'imageUpload'
+	],
 	image: {
 		toolbar: [
 			'imageStyle:full',
 			'imageStyle:side',
 			'|',
-			'imageTextAlternative'
+			'imageTextAlternative',
+			'|',
+			'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'
+		],
+		styles: [
+			'full',
+			'alignLeft',
+			'alignRight'
 		]
 	},
 	table: {
