@@ -35,7 +35,6 @@ import BlockToolbar from '@ckeditor/ckeditor5-ui/src/toolbar/block/blocktoolbar'
 import HeadingButtonsUI from '@ckeditor/ckeditor5-heading/src/headingbuttonsui';
 import ParagraphButtonUI from '@ckeditor/ckeditor5-paragraph/src/paragraphbuttonui';
 
-
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -64,7 +63,10 @@ ClassicEditor.builtinPlugins = [
 	TextTransformation,
 	Highlight,
 	Base64UploadAdapter,
-	Alignment
+	Alignment,
+	BlockToolbar,
+	HeadingButtonsUI,
+	ParagraphButtonUI
 ];
 
 // Editor configuration.
